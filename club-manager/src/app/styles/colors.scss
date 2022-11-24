@@ -1,0 +1,13 @@
+
+
+@mixin color-green {color:rgb(93, 230, 212);}
+
+@mixin color-red {color: rgb(230, 93, 93);}
+
+@mixin background-color-green {background-color:rgb(93, 230, 212);}
+
+@mixin color-gray {color: rgb(189, 206, 203);}
+
+@mixin border-color-gray-1 {border: 1px solid rgb(189, 206, 203);}
+
+@mixin border-color-gray-2 {border: 2px solid rgb(189, 206, 203);}

@@ -1,0 +1,19 @@
+@import '../../styles/colors.scss';
+
+.field {
+    width: 70%;
+    margin-left:220px;
+    margin-top: 20px;
+
+    h3 {
+        @include color-green;
+    }
+    .row > button {
+        width:10%;
+        margin-right: 12px;
+        
+    }
+    .title {
+        justify-content: space-between;
+    }
+}

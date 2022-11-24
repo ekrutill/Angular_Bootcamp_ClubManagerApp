@@ -1,0 +1,21 @@
+
+@import '../../styles/colors.scss';
+
+.field {
+    position: fixed;
+    top:0;
+    left:0;
+    @include background-color-green;
+    width: 200px;
+    height: 100vh;
+
+    button {
+        width:150px;
+        margin:10px;
+    }
+    
+    img {
+        width:150px;
+        margin: 10px;
+    }
+}
