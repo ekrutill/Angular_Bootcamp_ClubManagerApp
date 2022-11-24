@@ -1,6 +1,6 @@
 export class Player {
     [key:string]: any;
-    id?:number ;
+    id:number ;
     name: string;
     shirtNumber: number;
     team: string;

@@ -1,3 +1,4 @@
+import { PlayersComponent } from './../components/players/players.component';
 import { Injectable } from '@angular/core';
 import { Player } from '../models/player-interface';
 
@@ -37,15 +38,24 @@ export class PlayerService {
    }
 
   public addingNewPlayer(player: Player){
-    player.id = this.players.length + 1;
+    // player.id = this.players.length + 1;
+    // this.players.push(player);
+    // this.setItemToLS();   - instead of adding 1 player to the players.length, adding 1 player to the maximum id of the object:
+    const ids = this.players.map(obj =>obj.id);
+    const maxID = Math.max(...ids);
+    player.id = maxID + 1;
+
     this.players.push(player);
     this.setItemToLS();
+
   }
 
   public deletePlayer(player:Player){
     let index = this.players.findIndex(x=>x.id == player.id);
     this.players.splice(index, 1);
     this.setItemToLS();
+    // let onePlayer = JSON.stringify(player)
+    // localStorage.removeItem(onePlayer);
   }
 
 
@@ -68,7 +78,7 @@ export class PlayerService {
     return playerName.name;
     }
   
-  
+
   separatePlayersByTeams(){
       const groupBy = (input:any, key:any) => {
 
