@@ -4,18 +4,23 @@
 .box {
     display: flex;
     justify-content: center;
-    .field {
-        padding: 10px;
-        @include border-color-gray-2;
-        width: 300px;
-        height:150px;
-        margin-left:auto;
-        align-items: center;
-        margin: 20px;
-    }
+    align-items: center;
+    margin-top:80px;
 
-    h3 {
-        margin-left:10px;
-        @include color-green;
-    }
+
+    
+}
+.field {
+    padding: 10px;
+    @include border-color-gray-2;
+    width: 300px;
+    height:150px;
+    margin-left:auto;
+    align-items: center;
+    margin: 20px;
+}
+
+h3 {
+    margin-left:10px;
+    @include color-green;
 }

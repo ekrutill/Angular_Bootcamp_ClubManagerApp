@@ -1,19 +1,21 @@
 
-<div class="container box">
-    <div class="row my-4">
-        <h3> Home page</h3>
-        <div class="col-6 rounded field " >
-            <h4>Statistic box</h4>
-            <p>Number of players: {{ playerService.players.length }}</p>
-            <p>Summa wage: {{ playerService.wageTotal() }} HUF</p>
+    <div class="box d-flex align-items-center ms-1 ">
+
+        <div class="row my-5">
+            <h3> Home page</h3>
+            <div class="col-6 rounded field " >
+                <h4>Statistic box</h4>
+                <p>Number of players: {{ playerService.players.length }}</p>
+                <p>Summa wage: {{ playerService.wageTotal() }} HUF</p>
+            </div>
+
+            <div class="col-6 rounded field">
+                <h4>Wage info</h4>
+                <p>Highest payed player: 
+                {{ playerService.highestPayedPlayersName() }}
+                </p>
+                <p>Wage: {{ playerService.highestWage() }} HUF</p>
+            </div>
         </div>
 
-        <div class="col-6 rounded field">
-            <h4>Wage info</h4>
-            <p>Highest payed player: 
-            {{ playerService.highestPayedPlayersName() }}
-            </p>
-            <p>Wage: {{ playerService.highestWage() }} HUF</p>
-        </div>
     </div>
-</div>
