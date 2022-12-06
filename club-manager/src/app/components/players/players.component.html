@@ -1,11 +1,11 @@
-<div class="row field">
-    <div class="col-xs-12">
+<div class="row field ">
+    <div class="col-xs-12 table-box">
         <div class="row title">
-        <h3 class="col-6">Player module page</h3>
+        <h3 class="col-6 ">Player module page</h3>
         <button class="btn btn-primary col-6" [routerLink]="['/', 'add', 0]">Add player</button>
         </div>
 
-        <table class="table table-bordered my-3">
+        <table class="table table-bordered rounded my-3">
             <thead class="">
               <tr>
                 <th scope="col-2">Name</th>
@@ -25,10 +25,10 @@
                 <td> {{ player.age }} </td>
                 <td> {{ player.wage }} </td>
                 <td> {{ player.endOfContract | date}} </td>
-                <td> <button class="btn btn-warning mx-1" [routerLink]="['/', 'details', player.id]" >
+                <td class="text-center"> <button class="btn btn-warning m-1" [routerLink]="['/', 'details', player.id]" >
                   <!-- <app-player-details [players]="players"></app-player-details> -->
                   Details</button> 
-                  <button class="btn btn-danger mx-1" (click)="deletePlayer(player)">X</button></td>
+                  <button class="btn btn-danger m-1" (click)="deletePlayer(player)">X</button></td>
               </tr>
             </tbody>
           </table>

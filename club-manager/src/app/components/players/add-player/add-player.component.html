@@ -1,6 +1,6 @@
-<div class="row rounded field">
+<div class="row field">
   <form class="form-group" [formGroup]="form" (ngSubmit)="onSubmit()">
-    <div class="row">
+    <div class="row rounded input-box" >
       <input formControlName="id" name="id" type="hidden" />
       <div class="col-2">
         <input
@@ -92,9 +92,9 @@
         </p>
       </div>
 
-      <div class="col-2">
-        <button class="btn btn-outline-primary" type="submit" [disabled]="form.invalid">
-          Save player
+      <div class="col-2 text-center">
+        <button class="btn btn-outline-primary text-center" type="submit" [disabled]="form.invalid">
+          Save
         </button>
       </div>
     </div>

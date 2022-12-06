@@ -2,15 +2,29 @@
 
 .field {
     
-    margin-left:230px;
-    margin-top: 50px;
+    // margin-left:220px;
+    // margin-top: 80px;
+    margin: 0 auto;
     width: 69%;
-    padding: 20px 10px 20px 10px;
-    @include background-color-green;
-
+    
+    .input-box {
+        @include background-color-green;
+        padding: 20px 10px 20px 10px;
+        margin-top:120px;
+        
+    }
+    
     button {
         width:100%;
+        font-size: small;
+        margin:6px;
+        
     }
+    
+    input {
+        margin:6px;
+    }
+    
    
 }
 
