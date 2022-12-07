@@ -10,47 +10,15 @@ import { PlayerService } from 'src/app/services/player.service';
 })
 export class PlayersComponent implements OnInit {
 
-  players = this.playerService.players;
-  whichElementSelected: boolean = false;
-  selected? :Player;
+  players!: Player[];
 
-  constructor(public playerService: PlayerService, private router: Router, private route: ActivatedRoute) {
-    this.whichElementSelected = false;
-   }
+  constructor(private playerService: PlayerService){
+    this.players = this.playerService.getPlayersFromLS("players")
+  }
 
   ngOnInit(): void {
+    
   }
-
-  // addPlayer(){
-  //   this.router.navigate(['add'], {relativeTo: this.route});
-  //   console.log("add button működik")
-  // }
-
-  deletePlayer(player: Player){
-    this.playerService.deletePlayer(player);
-    // console.log(index);
-
-  }
-
-  // detailsOfPlayer(){
-  //   this.router.navigate(['details' ], {relativeTo: this.route });
-   
-  // }
-
-  onSelectedItem(itemSelected: Player){
-    this.selected = itemSelected;
-      return this.whichElementSelected = true;
-
-    // let index = -1;
-
-    // for(let i = 0; i < this.players.length && index == -1; i++)
-    // {
-    //     if(this.players[i] == itemSelected)
-    //     index = i;
-    //   }
-    //   return index
-
-    }
   
 
 }

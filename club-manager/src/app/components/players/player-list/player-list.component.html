@@ -1,0 +1,27 @@
+<table class="table table-bordered rounded my-3">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Shirt number</th>
+        <th *ngIf="separateByTeams">Team</th>
+        <th>Age</th>
+        <th>Wage (HUF)</th>
+        <th>End of contract</th>
+        <th>Action buttons</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let player of playerList; let i = index">
+        <th scope="row"> {{ player.name }} </th>
+        <td > {{ player.shirtNumber }} </td>
+        <td *ngIf="separateByTeams"> {{ player.team }} </td>
+        <td> {{ player.age }} </td>
+        <td> {{ player.wage }} </td>
+        <td> {{ player.endOfContract | date}} </td>
+
+        <td class="text-center"> <button class="btn btn-warning m-1" [routerLink]="['/', 'details', player.id]" >
+          Details</button> 
+          <button class="btn btn-danger m-1" (click)="deletePlayer(player)">X</button></td>
+      </tr>
+    </tbody>
+  </table>
