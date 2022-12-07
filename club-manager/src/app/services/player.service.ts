@@ -79,7 +79,7 @@ export class PlayerService {
     }
   
 
-  separatePlayersByTeams(){
+  public separatePlayersByTeam(){
       const groupBy = (input:any, key:any) => {
 
         return input.reduce((acc: { [x: string]: any[]; }, currentValue: { [x: string]: any; }) => {
@@ -91,5 +91,9 @@ export class PlayerService {
           return acc;
         }, {});
       };
+    }
+
+  public separatePlayersByWage(players: any) {
+      return players.reduce((a: any, b: { wage: any; }) => a + b.wage, 0);
     }
 }
