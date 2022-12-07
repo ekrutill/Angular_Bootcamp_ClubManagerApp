@@ -38,9 +38,7 @@ export class PlayerService {
    }
 
   public addingNewPlayer(player: Player){
-    // player.id = this.players.length + 1;
-    // this.players.push(player);
-    // this.setItemToLS();   - instead of adding 1 player to the players.length, adding 1 player to the maximum id of the object:
+    // instead of adding 1 player to the players.length, adding 1 player to the maximum id of the object:
     const ids = this.players.map(obj =>obj.id);
     const maxID = Math.max(...ids);
     player.id = maxID + 1;
@@ -54,8 +52,6 @@ export class PlayerService {
     let index = this.players.findIndex(x=>x.id == player.id);
     this.players.splice(index, 1);
     this.setItemToLS();
-    // let onePlayer = JSON.stringify(player)
-    // localStorage.removeItem(onePlayer);
   }
 
 
@@ -80,17 +76,31 @@ export class PlayerService {
   
 
   public separatePlayersByTeam(){
-      const groupBy = (input:any, key:any) => {
+    // another possible solution:
 
-        return input.reduce((acc: { [x: string]: any[]; }, currentValue: { [x: string]: any; }) => {
-          let groupKey = currentValue[key];
-          if (!acc[groupKey]) {
-            acc[groupKey] = [];
-          }
-          acc[groupKey].push(currentValue);
-          return acc;
-        }, {});
-      };
+      // const groupBy = (input:any, key:any) => {
+
+      //   return input.reduce((acc: { [x: string]: any[]; }, currentValue: { [x: string]: any; }) => {
+      //     let groupKey = currentValue[key];
+      //     if (!acc[groupKey]) {
+      //       acc[groupKey] = [];
+      //     }
+      //     acc[groupKey].push(currentValue);
+      //     return acc;
+      //   }, {});
+      // };
+      // return groupBy;
+
+      return this.players.reduce((separatedGroups, player) => {
+      
+        const key = player.team as keyof Player;
+
+        separatedGroups[key] = separatedGroups[key] || [];
+        separatedGroups[key].push(player);
+            return separatedGroups;
+        }, 
+        Object.create(null));
+
     }
 
   public separatePlayersByWage(players: any) {

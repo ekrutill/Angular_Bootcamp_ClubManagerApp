@@ -12,6 +12,7 @@ import { AddPlayerComponent } from './components/players/add-player/add-player.c
 import { PlayerDetailsComponent } from './components/players/player-details/player-details.component';
 import { WageInfoComponent } from './components/wages/wage-info/wage-info.component';
 import { WageTeamsComponent } from './components/wages/wage-teams/wage-teams.component';
+import { PlayerListComponent } from './components/players/player-list/player-list.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { WageTeamsComponent } from './components/wages/wage-teams/wage-teams.com
     AddPlayerComponent,
     PlayerDetailsComponent,
     WageInfoComponent,
-    WageTeamsComponent
+    WageTeamsComponent,
+    PlayerListComponent
   ],
   imports: [
     BrowserModule,

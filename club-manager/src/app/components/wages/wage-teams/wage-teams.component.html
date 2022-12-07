@@ -1,63 +1,14 @@
+
+
 <div class="row field rounded my-3 p-2">
-    <h5 class="text-secondary my-3">Football team players</h5>
-    <p>Team full wage: {{ ftWages }}</p>
+  <div *ngFor="let team of playerTeams | keyvalue">
 
-    <table class="table table-bordered table-responsive{-sm|-md|-lg|-xl} my-3 ">
-        <thead class="">
-          <tr>
-            <th>Name</th>
-            <th>Shirt No.</th>
-            <th>Team</th>
-            <th>Age</th>
-            <th>Wage (HUF)</th>
-            <th>End of contract</th>
-            <th>Details</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let ft of footballTeam; let i = index">
-            <th scope="row"> {{ ft.name }} </th>
-            <td > {{ ft.shirtNumber }} </td>
-            <td> {{ ft.team }} </td>
-            <td> {{ ft.age }} </td>
-            <td> {{ ft.wage }} </td>
-            <td> {{ ft.endOfContract | date}} </td>
-            <td> <button class="btn btn-warning mx-1" [routerLink]="['/', 'details', ft.id]" >
-              <!-- <app-player-details [players]="players"></app-player-details> -->
-              Details</button> 
-          </tr>
-        </tbody>
-      </table>
+    <h5 class="text-secondary my-3">Team: {{ team.key }} </h5>
+    <p>Team full wage: {{ getWage(team.value) }}</p>
+    <app-player-list [playerList]="team.value" [separateByTeams]="separateByTeams"></app-player-list>
 
-
-      <h5 class="text-secondary my-3">Badminton team players</h5>
-      <p>Team full wage: {{ btWages }}</p>
-  
-      <table class="table table-bordered my-3 col-xs-12 col-lg-6">
-          <thead class="">
-            <tr>
-              <th>Name</th>
-              <th>Shirt No.</th>
-              <th>Team</th>
-              <th>Age</th>
-              <th>Wage (HUF)</th>
-              <th>End of contract</th>
-              <th>Details</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let bt of badmintonTeam; let i = index">
-              <th scope="row"> {{ bt.name }} </th>
-              <td > {{ bt.shirtNumber }} </td>
-              <td> {{ bt.team }} </td>
-              <td> {{ bt.age }} </td>
-              <td> {{ bt.wage }} </td>
-              <td> {{ bt.endOfContract | date}} </td>
-              <td> <button class="btn btn-warning mx-1" [routerLink]="['/', 'details', bt.id]" >
-                <!-- <app-player-details [players]="players"></app-player-details> -->
-                Details</button> 
-            </tr>
-          </tbody>
-        </table>
-
+  </div>
 </div>
+
+
+

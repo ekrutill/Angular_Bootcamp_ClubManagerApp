@@ -6,20 +6,27 @@ import { PlayerService } from 'src/app/services/player.service';
   templateUrl: './wage-info.component.html',
   styleUrls: ['./wage-info.component.scss']
 })
-export class WageInfoComponent implements OnInit {
+export class WageInfoComponent {
 
   currentMoney: number = 0;
-  monthlyIncome: number =0;
+  monthlyIncome: number = 0;
   sumOfWage!: number; 
 
   constructor(private playerService: PlayerService,) { 
     this.sumOfWage = this.playerService.wageTotal() - this.playerService.wageTotal()*2;
-    
+
   }
 
-  ngOnInit(): void {
+  get getExpectedMoney(): number {
+    let result = (this.sumOfWage - this.currentMoney) + this.monthlyIncome
+    return result
   }
- 
+  
+  get getMoneyStability(): number{
+    let result = (this.sumOfWage - this.currentMoney) + this.monthlyIncome
+    return result % 12 + 1
+  }
+
 
 
 }

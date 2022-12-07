@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { Player } from 'src/app/models/player-interface';
+import { Component } from '@angular/core';
 import { PlayerService } from 'src/app/services/player.service';
 
 @Component({
@@ -7,55 +6,21 @@ import { PlayerService } from 'src/app/services/player.service';
   templateUrl: './wage-teams.component.html',
   styleUrls: ['./wage-teams.component.scss']
 })
-export class WageTeamsComponent implements OnInit {
+export class WageTeamsComponent {
 
-  players = this.playerService.players ;
-  footballTeam!: Player[];
-  badmintonTeam!: Player[];
-  btWages!: any
-  ftWages!: any
-
-  constructor(private playerService: PlayerService) { 
-    this.footballTeam = this.selectFootballTeam();
-    this.badmintonTeam = this.selectBadmintonTeam();
-    this.btWages = this.getBtWages();
-    this.ftWages = this.getFtWages();
+  separateByTeams: boolean = true;
+  playerTeams: any[];
+  wages?: number[];
+ 
+  constructor(private playerService: PlayerService) {
+    this.playerTeams = this.playerService.separatePlayersByTeam();
   }
 
-  ngOnInit(): void {
-  }
-
-  selectFootballTeam(): Player[] {
-    let footballPlayers = [];
-    for(let i = 0; i < this.players.length; i++){
-
-      if(this.players[i].team == "Football")
-      footballPlayers.push(this.players[i])
-    }
-    return footballPlayers
+  getWage(team: any) {
+    this.wages = this.playerService.separatePlayersByWage(team);
+    return this.wages;
   }
 
 
-  selectBadmintonTeam(): Player[]{
-    let badmintonPlayers = [];
-    for(let i = 0; i < this.players.length; i++){
 
-      if(this.players[i].team == "Badminton")
-      badmintonPlayers.push(this.players[i])
-    }
-    return badmintonPlayers
-  }
-
-
-  getBtWages(){
-    let wages = 0;
-    this.badmintonTeam.forEach(player => wages += player.wage);
-    return wages
-  }
-
-  getFtWages(){
-    let wages = 0;
-    this.footballTeam.forEach(player => wages += player.wage);
-    return wages
-  }
 }
