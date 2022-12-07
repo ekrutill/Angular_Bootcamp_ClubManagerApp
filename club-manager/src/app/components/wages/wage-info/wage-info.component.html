@@ -1,59 +1,25 @@
-<!-- <div class="my-3">
-<div class="row">
-    <div class="col">
-        <label for="currentMoney">Current money:</label>
-        <input type="number" class="form-control" [(ngModel)]="currentMoney">
-    </div>
-    <div class="col">
-        <label for="monthlyIncome">Current monthly income:</label>
-        <input type="number" class="form-control"  [(ngModel)]="monthlyIncome">
-    </div>
-</div>
-
-<div class="row field rounded my-3 p-2">
-        <h5 class="text-secondary my-3">Wage-info box</h5>
-        <p>Current money: {{ currentMoney }}</p>
-        <p>Current monthly income: {{ monthlyIncome }}</p>
-        <p>Expected money at the end of next month: {{ currentMoney + sumOfWage + monthlyIncome }}</p>
-
-        <span>Club financial stability: 
-            <p *ngIf="currentMoney < monthlyIncome" [class.isStable]="currentMoney < monthlyIncome">The club is financially stable</p> 
-            <p *ngIf="currentMoney > monthlyIncome" [class.notStable]="currentMoney > monthlyIncome">The club's financial reserves run out after {{currentMoney/0.112}} month</p>
-        </span>
-</div>
-    
-</div> -->
-
 
 <div class="my-3">
-<div class="row">
-    <div class="col">
-        <label for="currentMoney">Current money:</label>
-        <input type="number" class="form-control" [(ngModel)]="currentMoney">
+    <div class="row">
+        <div class="col">
+            <label for="currentMoney">Current money:</label>
+            <input type="number" class="form-control" [(ngModel)]="currentMoney">
+        </div>
+        <div class="col">
+            <label for="monthlyIncome">Current monthly income:</label>
+            <input type="number" class="form-control"  [(ngModel)]="monthlyIncome">
+        </div>
     </div>
-    <div class="col">
-        <label for="monthlyIncome">Current monthly income:</label>
-        <input type="number" class="form-control"  [(ngModel)]="monthlyIncome">
+
+    <div class="row field rounded my-3 p-2">
+            <h5 class="text-secondary my-3">Wage-info box</h5>
+            <p>Current money (expenses) : {{ currentMoney }}</p>
+            <p>Current monthly income: {{ monthlyIncome }}</p>
+            <p>Expected money at the end of next month: {{ getExpectedMoney }}</p>
+
+            <span>Club financial stability: 
+                <p *ngIf="currentMoney < monthlyIncome" [class.isStable]="currentMoney < monthlyIncome">The club is financially stable</p> 
+                <p *ngIf="currentMoney > monthlyIncome" [class.notStable]="currentMoney > monthlyIncome">The club's financial reserves run out after {{ getMoneyStability }} month</p>
+            </span>
     </div>
-</div>
-
-<div class="row field rounded my-3 p-2">
-        <h5 class="text-secondary my-3">Wage-info box</h5>
-        <p>Current money (expenses) : {{ currentMoney }}</p>
-        <p>Current monthly income: {{ monthlyIncome }}</p>
-        <p>Expected money at the end of next month: {{ getExpectedMoney }}</p>
-
-        <!-- <span>Club financial stability: 
-            <p *ngIf="currentMoney < monthlyIncome" [class.isStable]="currentMoney < monthlyIncome">The club is financially stable</p> 
-
-            <p *ngIf="currentMoney > monthlyIncome" [class.notStable]="currentMoney > monthlyIncome">The club's financial reserves run out after {{ getMoneyStability }} month</p>
-        </span> -->
-
-        <span>Club financial stability: 
-            <p *ngIf="currentMoney < monthlyIncome" [class.isStable]="currentMoney < monthlyIncome">The club is financially stable</p> 
-
-            <p *ngIf="currentMoney > monthlyIncome" [class.notStable]="currentMoney > monthlyIncome">The club's financial reserves run out after {{ getMoneyStability }} month</p>
-        </span>
-</div>
-    
 </div>
