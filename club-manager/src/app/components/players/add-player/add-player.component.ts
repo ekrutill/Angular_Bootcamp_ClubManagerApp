@@ -1,9 +1,9 @@
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
-import { Player } from 'src/app/models/player-interface';
-import { PlayerService } from 'src/app/services/player.service';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Player } from '../player-interface';
+import { PlayerService } from '../player.service';
 
 @Component({
   selector: 'app-add-player',

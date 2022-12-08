@@ -1,7 +1,7 @@
 import { ActivatedRoute, Router } from '@angular/router';
-import { Player } from './../../../models/player-interface';
-import { Component, Input, OnInit } from '@angular/core';
-import { PlayerService } from 'src/app/services/player.service';
+import { Player } from '../player-interface';
+import { Component, OnInit } from '@angular/core';
+import { PlayerService } from '../player.service';
 
 @Component({
   selector: 'app-player-details',
@@ -10,12 +10,10 @@ import { PlayerService } from 'src/app/services/player.service';
 })
 export class PlayerDetailsComponent implements OnInit {
 
-  // @Input() players? : Player[];
   players!: Player;
   currentId!: number
-  // = this.playerService.players;
- 
 
+ 
   constructor(private playerService: PlayerService, private router: Router, private activatedRoute: ActivatedRoute, ) { 
     this.currentId = activatedRoute.snapshot.params['id'];
 

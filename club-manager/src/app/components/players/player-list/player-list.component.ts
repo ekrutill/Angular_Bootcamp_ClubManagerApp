@@ -1,6 +1,6 @@
-import { Player } from './../../../models/player-interface';
-import { Component, Input, OnInit } from '@angular/core';
-import { PlayerService } from 'src/app/services/player.service';
+import { Player } from '../player-interface';
+import { Component, Input } from '@angular/core';
+import { PlayerService } from '../player.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({

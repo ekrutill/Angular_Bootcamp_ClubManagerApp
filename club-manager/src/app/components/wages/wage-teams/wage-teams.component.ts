@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { PlayerService } from 'src/app/services/player.service';
+import { PlayerService } from '../../players/player.service';
 
 @Component({
   selector: 'app-wage-teams',
