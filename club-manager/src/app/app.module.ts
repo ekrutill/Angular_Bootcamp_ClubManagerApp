@@ -1,3 +1,4 @@
+import { PlayersModule } from './components/players/players.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -13,6 +14,7 @@ import { PlayerDetailsComponent } from './components/players/player-details/play
 import { WageInfoComponent } from './components/wages/wage-info/wage-info.component';
 import { WageTeamsComponent } from './components/wages/wage-teams/wage-teams.component';
 import { PlayerListComponent } from './components/players/player-list/player-list.component';
+import { WagesModule } from './components/wages/wages.module';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { PlayerListComponent } from './components/players/player-list/player-lis
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    PlayersModule,
+    WagesModule
   ],
   providers: [],
   bootstrap: [AppComponent]
