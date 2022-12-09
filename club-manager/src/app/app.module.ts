@@ -9,7 +9,7 @@ import { WagesModule } from './components/wages/wages.module';
 import { AppComponent } from './app.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
-import { PlayerService } from './components/players/player.service';
+import { CoreModule } from './core.module';
 
 
 @NgModule({
@@ -25,12 +25,15 @@ import { PlayerService } from './components/players/player.service';
     FormsModule,
     ReactiveFormsModule,
     PlayersModule,
-    WagesModule
+    WagesModule,
+    CoreModule
   ],
   
-  providers: [
-    PlayerService
-  ],
+  // using core.module
+  // providers: [
+  //   PlayerService
+  // ],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }
