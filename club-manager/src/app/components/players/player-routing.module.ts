@@ -6,24 +6,10 @@ import { PlayerDetailsComponent } from './player-details/player-details.componen
 import { AddPlayerComponent } from './add-player/add-player.component';
 
 const playerRoutes: Routes = [
-    { path: 'players', 
-    component: PlayersComponent,
-    children: 
-    [
-        { path: 'details/:id', component: PlayerDetailsComponent},
-
-        { path: 'add/:id', component: AddPlayerComponent},
-
-     ] }
-    // { path: 'players', 
-    // component: PlayersComponent, },
-    // { path: 'details/:id', component: PlayerDetailsComponent},
-
-    //     { path: 'add/:id', component: AddPlayerComponent},
-
-      
+    { path: 'players',  component: PlayersComponent, },
+    { path: 'details/:id', component: PlayerDetailsComponent},
+    { path: 'add/:id', component: AddPlayerComponent},
 ];
-
 
 @NgModule({
     imports: [RouterModule.forChild(playerRoutes)],
