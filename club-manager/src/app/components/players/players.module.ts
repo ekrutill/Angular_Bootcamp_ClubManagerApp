@@ -1,5 +1,6 @@
+import { PlayerRoutingModule } from './player-routing.module';
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
+// import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 import { PlayersComponent } from './players.component';
@@ -18,9 +19,19 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   ],
   imports: [
     CommonModule,
-    RouterModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    PlayerRoutingModule,
+    
+// the routes moved to the player-routing.module as the children of PlayerComponent:
+
+// RouterModule.forChild([ //forChild vs forRoot
+// {path: 'players', component: PlayersComponent},
+// {path: 'details/:id', component: PlayerDetailsComponent},
+// {path: 'add/:id', component: AddPlayerComponent},
+// ])
+
+    
   ],
   exports: [
     PlayersComponent,

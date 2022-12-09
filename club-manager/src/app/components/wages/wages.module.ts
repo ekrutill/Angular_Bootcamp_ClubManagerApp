@@ -18,10 +18,12 @@ import { PlayersModule } from '../players/players.module';
   ],
   imports: [
     CommonModule,
-    RouterModule,
     FormsModule,
     ReactiveFormsModule,
-    PlayersModule
+    PlayersModule,
+    RouterModule.forChild([
+      {path: 'wage', component: WagesComponent}
+    ])
   ],
   exports: [
     WagesComponent,

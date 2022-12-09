@@ -1,25 +1,39 @@
-import { WagesComponent } from './components/wages/wages.component';
-import { PlayersComponent } from './components/players/players.component';
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { HomePageComponent } from './components/home-page/home-page.component';
-import { AddPlayerComponent } from './components/players/add-player/add-player.component';
-import { PlayerDetailsComponent } from './components/players/player-details/player-details.component';
 
 const routes: Routes = [
-  {path: '', component: HomePageComponent},
-  {path: 'players', component: PlayersComponent, 
-// children:[
-//   {path: 'add/:id', component: AddPlayerComponent},
-//          ]
-        },
-  {path: 'wage', component: WagesComponent},
-  {path: 'details/:id', component: PlayerDetailsComponent},
-  {path: 'add/:id', component: AddPlayerComponent},
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'home', component: HomePageComponent },
+
+  //lazy-loading:
+  {
+    path: 'players',
+    loadChildren: () =>
+      import('./components/players/players.module').then(
+        (m) => m.PlayersModule
+      ),
+  },
+  {
+    path: 'wage',
+    loadChildren: () =>
+      import('./components/wages/wages.module').then((m) => m.WagesModule),
+  },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  imports: [
+    RouterModule.forRoot(routes, 
+      // { preloadingStrategy: PreloadAllModules }
+      ),
+  ],
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
+
+
+
+// {path: 'players', component: PlayersComponent},
+// {path: 'details/:id', component: PlayerDetailsComponent},
+// {path: 'add/:id', component: AddPlayerComponent},
+// {path: 'wage', component: WagesComponent},
