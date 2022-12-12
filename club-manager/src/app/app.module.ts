@@ -4,8 +4,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
-import { PlayersModule } from './components/players/players.module';
-import { WagesModule } from './components/wages/wages.module';
+import { PlayersModule } from './players/players.module';
+import { WagesModule } from './wages/wages.module';
 import { CoreModule } from './core.module';
 
 import { AppComponent } from './app.component';

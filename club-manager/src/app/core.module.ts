@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { PlayerService } from './components/players/player.service';
+import { PlayerService } from './players/player.service';
 
 
 @NgModule({

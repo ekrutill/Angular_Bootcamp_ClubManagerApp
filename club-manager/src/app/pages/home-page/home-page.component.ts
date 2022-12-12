@@ -1,5 +1,4 @@
-
-import { PlayerService } from '../../components/players/player.service';
+import { PlayerService } from './../../players/player.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({

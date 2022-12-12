@@ -10,14 +10,14 @@ const routes: Routes = [
   {
     path: 'home',
     loadChildren: () =>
-      import('./components/players/players.module').then(
+      import('./players/players.module').then(
         (m) => m.PlayersModule
       ),
   },
   {
     path: 'home',
     loadChildren: () =>
-      import('./components/wages/wages.module').then((m) => m.WagesModule),
+      import('./wages/wages.module').then((m) => m.WagesModule),
   },
 ];
 

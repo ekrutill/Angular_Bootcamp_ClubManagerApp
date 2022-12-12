@@ -1,19 +1,11 @@
-@import '../../../assets/styles/colors.scss';
+@import '../styles/colors.scss';
 
 .field {
     width: 70%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     margin: 0 auto;
-
-    .table-box {
-        margin-top:120px;
-    }
-
-
+    
     h3 {
-        @include color-green;
+        @include color-green
     }
     .row > button {
         width:10%;
@@ -21,6 +13,13 @@
         
     }
     .title {
+        display: flex;
         justify-content: space-between;
+
+    }
+    
+    .wage-box {
+        margin-top: 120px;
+
     }
 }

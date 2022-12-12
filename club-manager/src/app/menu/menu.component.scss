@@ -1,5 +1,4 @@
-
-@import '../../../assets/styles/colors.scss';
+@import '../styles/colors.scss';
 
 .field {
     position: absolute;
@@ -17,8 +16,8 @@
     img {
         width:150px;
     }
-
-
+    
+    
 }
 
 @media only screen and (max-width: 1200px) {
