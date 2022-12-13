@@ -6,13 +6,6 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './wages.component.html',
   styleUrls: ['./wages.component.scss']
 })
-export class WagesComponent implements OnInit {
-
-  players = this.PlayerService.players
-
-  constructor(private PlayerService: PlayerService) { }
-
-  ngOnInit(): void {
-  }
+export class WagesComponent  {
 
 }

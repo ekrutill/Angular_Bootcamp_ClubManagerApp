@@ -7,6 +7,34 @@ import { Player } from './player-interface';
 export class PlayerService {
 
   players: Player[] = this.getPlayersFromLS("players");
+  mockPlayers: Player[]
+
+  constructor(){
+    this.mockPlayers = [
+      {id:1,
+      name:'Phil Collins',
+      shirtNumber:44,
+      team: 'Badminton',
+      age: 26,
+      wage: 300,
+      endOfContract: new Date('2023-05-05')},
+      {id:2,
+        name:'Kat Edison',
+        shirtNumber:38,
+        team: 'Football',
+        age: 25,
+        wage: 310,
+        endOfContract: new Date('2023-05-03')},
+        {id:3,
+          name:'Lucy Chan',
+          shirtNumber:36,
+          team: 'Badminton',
+          age: 22,
+          wage: 320,
+          endOfContract: new Date('2023-05-04')},
+      ]
+    
+  }
 
   //functions wich connected to localStorage purposes:
 

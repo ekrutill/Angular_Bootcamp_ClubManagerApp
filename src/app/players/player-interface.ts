@@ -1,12 +1,12 @@
 export class Player {
-    [key:string]: any;
-    id:number ;
-    name: string;
-    shirtNumber: number;
-    team: string;
-    age: number;
-    wage: number;
-    endOfContract: Date ;
+    static [key:string]: any;
+    public id:number;
+    public name: string;
+    public shirtNumber: number;
+    public team: string;
+    public age: number;
+    public wage: number;
+    public endOfContract: Date ;
 
     constructor(){
         this.id = 0;

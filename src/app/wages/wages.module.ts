@@ -21,7 +21,7 @@ import { PlayersModule } from '../players/players.module';
     FormsModule,
     ReactiveFormsModule,
 
-    //needed PlayersModule because of player-list 
+    //PlayersModule needed because of player-list 
     PlayersModule,
     RouterModule.forChild([
       {path: 'wage', component: WagesComponent}
