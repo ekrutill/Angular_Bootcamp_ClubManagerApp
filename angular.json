@@ -61,7 +61,10 @@
               "buildOptimizer": false,
               "optimization":{
                 "scripts": true,
-                "styles": true,
+                "styles": {
+                  "minify": true,
+                  "inlineCritical": false
+                },
                 "fonts": true
               },
               "vendorChunk": true,
