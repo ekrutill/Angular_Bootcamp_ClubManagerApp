@@ -65,7 +65,7 @@ export class PlayerService {
    }
 
   public addingNewPlayer(player: Player){
-    // instead of adding 1 player to the players.length, adding 1 player to the maximum id of the object:
+    // adding 1 player to the maximum id of the object:
     const ids = this.players.map(obj =>obj.id);
     const maxID = Math.max(...ids);
     player.id = maxID + 1;
